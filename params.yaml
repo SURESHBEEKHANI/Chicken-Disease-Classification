@@ -1,8 +1,24 @@
-AUGMENTATION: True
-IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
-BATCH_SIZE: 16
-INCLUDE_TOP: False
-EPOCHS: 1
-CLASSES: 2
-WEIGHTS: imagenet
-LEARNING_RATE: 0.01
+# Enable data augmentation during image preprocessing and training
+AUGMENTATION: True  
+
+# Specify the size of the input images. Here, images are resized to 224x224 pixels with 3 color channels (RGB).
+IMAGE_SIZE: [224, 224, 3]  # as per VGG 16 model
+
+# Set the batch size, which defines the number of samples that will be processed before the model's internal parameters are updated.
+BATCH_SIZE: 10  
+
+# A flag indicating whether to include the fully connected layers (top layers) of the model. 
+# Setting it to False means the model will be used as a feature extractor without the final classification layer.
+INCLUDE_TOP: False  
+
+# Define the number of epochs, which is the number of complete passes through the training dataset.
+EPOCHS: 1  
+
+# Specify the number of classes in the classification problem. In this case, there are 2 classes.
+CLASSES: 2  
+
+# Indicate the pre-trained weights to be used for the model. 'imagenet' means that the model weights are pre-trained on the ImageNet dataset.
+WEIGHTS: imagenet  
+
+# Set the learning rate for the optimizer. This value controls how much to adjust the model's parameters during training.
+LEARNING_RATE: 0.01  
